@@ -1,0 +1,13 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: extv1b1-empty
+spec:
+  rules:
+    - host: foo-api.dev.arms-dev.net
+      http:
+        paths:
+          - backend:
+              serviceName: foo-api
+              servicePort: 8080
+            path: /extensions/v1beta1/empty

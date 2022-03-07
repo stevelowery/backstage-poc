@@ -1,0 +1,8 @@
+test:
+  teardown: false
+
+deploy:
+  us-int: onApproval
+  mgmt:
+    secops: onApproval
+    us-mgmt: onApproval

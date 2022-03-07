@@ -1,0 +1,11 @@
+replicaCount: 1
+autoscaler:
+  enabled: false
+
+image:
+  repository: ingress-class-webhook
+  tag: latest
+  pullPolicy: Never
+
+apparmor:
+  profileRef: unconfined

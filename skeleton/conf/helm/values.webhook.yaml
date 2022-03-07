@@ -1,0 +1,16 @@
+kind: "MutatingWebhookConfiguration"
+clientConfig:
+  service:
+    name: ingress-class-webhook
+rules:
+  - apiGroups:
+      - "extensions"
+      - "networking.k8s.io"
+    apiVersions:
+      - "*"
+    resources:
+      - "ingresses"
+    operations:
+      - "CREATE"
+      - "UPDATE"
+    scope: "*"

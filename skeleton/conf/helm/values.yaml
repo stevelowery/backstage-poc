@@ -1,0 +1,47 @@
+image:
+  repository: ingress-class-webhook
+  tag: latest
+  pullPolicy: Always
+
+transport:
+  name: https
+  port: 443
+
+config: {}
+
+volumes:
+  - name: secrets
+    secret:
+      secretName: ingress-class-webhook-tls
+
+volumeMounts:
+  - name: secrets
+    mountPath: /var/run/secrets/certs
+
+resources:
+  requests:
+    cpu: "0.25"
+    memory: 64M
+  limits:
+    cpu: "0.5"
+    memory: 64M
+
+livenessProbe:
+  spec:
+    httpGet:
+      scheme: HTTPS
+      path: /liveness
+      port: 443
+
+readinessProbe:
+  spec:
+    httpGet:
+      scheme: HTTPS
+      path: /readiness
+      port: 443
+
+lifecycle:
+  override:
+    preStop:
+      exec:
+        command: ["sleep", "5"]

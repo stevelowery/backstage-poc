@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: extv1b1-both
+  annotations:
+    kubernetes.io/ingress.class: both-specific
+spec:
+  ingressClassName: both-specific
+  rules:
+    - host: foo-api.dev.arms-dev.net
+      http:
+        paths:
+          - backend:
+              serviceName: foo-api
+              servicePort: 8080
+            path: /extensions/v1beta1/both

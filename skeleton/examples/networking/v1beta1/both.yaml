@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: netv1b1-both
+  annotations:
+    kubernetes.io/ingress.class: both-specific
+spec:
+  ingressClassName: both-specific
+  rules:
+    - host: foo-api.dev.arms-dev.net
+      http:
+        paths:
+          - backend:
+              serviceName: foo-api
+              servicePort: 8080
+            path: /networking/v1beta1/both

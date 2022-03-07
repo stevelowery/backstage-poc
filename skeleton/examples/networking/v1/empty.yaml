@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: netv1-empty
+spec:
+  rules:
+    - host: foo-api.dev.arms-dev.net
+      http:
+        paths:
+          - backend:
+              service:
+                name: foo-api
+                port:
+                  number: 8080
+            path: /networking/v1/empty
+            pathType: ImplementationSpecific
