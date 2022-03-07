@@ -63,6 +63,7 @@ spec:
           component_id: ${{ parameters.component_id }}
           description: ${{ parameters.description }}
           owner: ${{ parameters.owner }}
+          namespace: ${{ parameters.namespace }}
           destination: ${{ parameters.repoUrl | parseRepoUrl }}
 
     - id: publish

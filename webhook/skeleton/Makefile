@@ -1,5 +1,5 @@
-NAMESPACE := infrastructure
-NAME      := ingress-class-webhook
+NAMESPACE := ${{ values.namespace }}
+NAME      := ${{ values.component_id }}
 VERSION   := v1.21.8
 
 ##########################
