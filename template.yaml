@@ -50,6 +50,7 @@ spec:
           ui:field: RepoUrlPicker
           ui:options:
             allowedHosts:
+              - github.com
               - gitlab.mgmt.arms-dev.net
 
   steps:
