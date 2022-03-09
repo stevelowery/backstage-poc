@@ -1,0 +1,24 @@
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: entegral
+  description: Entegral
+  links:
+    - url: http://entegral.com/
+      title: Website
+spec:
+  type: organization
+  profile:
+    displayName: Entegral
+    email: info@example.com
+    picture: https://www.entegral.com/content/dam/entegral/na-logos/19_ETG_RGB.png
+  children: [engprod]
+---
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: example-groups
+  description: A collection of all Backstage example Groups
+spec:
+  targets:
+    - ./engprod.yaml

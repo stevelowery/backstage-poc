@@ -1,0 +1,48 @@
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: engprod
+  description: Engineering Productivity
+spec:
+  type: department
+  parent: entegral
+  children: [delivery, observability, operations]
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: delivery
+  description: Software Delivery
+spec:
+  type: team
+  profile:
+    displayName: Software Delivery
+    email: softwaredelivery@entegral.com
+  parent: engprod
+  children: []
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: observability
+  description: Observability
+spec:
+  type: team
+  profile:
+    displayName: Observability
+    email: observability@entegral.com
+  parent: engprod
+  children: []
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: operations
+  description: Operations Engineering
+spec:
+  type: team
+  profile:
+    displayName: Operations Engineering
+    email: opseng@entegral.com
+  parent: engprod
+  children: []
